@@ -269,7 +269,7 @@
     } */
 
     /* top: 0px; */
-    top: calc(100vh * 0/900);
+    top: calc(100vh * 17/900);
     object-fit: contain;
     z-index: 99;
 }
