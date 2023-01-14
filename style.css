@@ -255,16 +255,22 @@
 .elan-logo {
     position: absolute;
     /* width: 165px; */
-    width: calc(100vw * 165/1440);
+    width: calc(100vw * 160/1440);
 
     /* height: 130px; */
-    height: calc(100vh * 130/900);
+    /* height: calc(100vh * 130/900); */
 
     /* left: 1275px; */
-    left: calc(100vw * 1275/1440);
+    /* left: calc(100vw * 1275/1440); */
+
+    right: 10px;
+    @media(max-width:700px) {
+        right:5px
+    }
 
     /* top: 0px; */
     top: calc(100vh * 0/900);
+    object-fit: contain;
     z-index: 99;
 }
 
