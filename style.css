@@ -7,13 +7,67 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    /* overflow-x: hidden; */
+}
+
+html {
     overflow-x: hidden;
 }
+
+/* body{
+    overflow-x: hidden;
+} */
 
 .no-select {
     user-select: none;
 }
 
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  display: block;
+  border-radius: 0;
+  /* mix-blend-mode: difference; */
+  top: 0;
+  left: 0;
+  z-index: 9999999999999999;  
+}
+
+.circle {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+    /* background-color: #E5B850; */
+    background-color: #E5B850; 
+    z-index: 9999999999999999;  
+    opacity: 0.8;
+}
+
+
+/* @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-in-animation {
+        animation: fadeIn 1.5s ease 0s 1 forwards normal;
+    }
+  } */
+
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+  }
+  
+  .fade-in.appear {
+    opacity: 1;
+  }
+
+  
 /* ########################################## SECTION ONE (MAIN)  ########################################## */
 
 .section-one {
@@ -76,11 +130,20 @@
     z-index: 110;
 
     overflow-y: hidden;
+    animation: fadeIn 1s;
 }
 
 .section-one-heading::selection {
     background: #E5B850;
     color: #095869;
+}
+
+.btn {
+    transition: all .2s ease-in-out;
+}
+
+.btn:hover{
+    transform: scale(1.2);
 }
 
 .btn-about {
@@ -102,6 +165,7 @@
     border-radius: 7px;
     z-index: 100;
 }
+
 
 .btn-howtoplay {
     position: absolute;
@@ -233,21 +297,14 @@
     /* top: -250px; */
     top: calc(-100vh * 250/900);
     z-index: 1;
-    animation: maze-rotate 1000s linear 0s infinite normal;
+    animation: maze-rotate 300s linear 0s infinite normal;
 }
 
 .cryptex-logo {
     position: absolute;
-    /* width: 59px; */
     width: calc(100vw * 59/1440);
-
-    /* height: 82px; */
     height: calc(100vh * 82/900);
-
-    /* left: 25px; */
     left: calc(100vw * 25/1440);
-
-    /* top: 16px; */
     top: calc(100vh * 16/900);
     z-index: 99;
 }
@@ -255,27 +312,22 @@
 .elan-logo {
     position: absolute;
     /* width: 165px; */
-    width: calc(100vw * 160/1440);
+    width: calc(100vw * 280/1440);
 
     /* height: 130px; */
-    /* height: calc(100vh * 130/900); */
+    height: calc(100vh * 280/900);
 
     /* left: 1275px; */
-    /* left: calc(100vw * 1275/1440); */
-
-    right: 10px;
-    /* @media(max-width:700px) {
-        right:5px
-    } */
+    left: calc(100vw * 1225/1440);
 
     /* top: 0px; */
-    top: calc(100vh * 17/900);
-    object-fit: contain;
+    top: calc(100vh * -75/900);
     z-index: 99;
 }
 
 
 /* ########################################## SECTION TWO (MAIN)  ########################################## */
+
 
 
 
@@ -293,7 +345,6 @@
 
 .section-two-text-one {
 
-    
     /* width: 983px;
     height: 210px; */
     padding-left: max(17vw, 2rem);
@@ -313,7 +364,11 @@
 
     color: #57471C;
     overflow-y: hidden;
+    animation: fadeIn 2s;
+
 }
+
+
 
 .section-two-text-one::selection {
     background: #57471C;
@@ -348,11 +403,11 @@
     position: absolute;
     
     /* left: 1147px; */
-    left: calc(100vw * 1147/1440);
+    left: calc(100vw * 1300/1440);
     /* top: 1322px; */
-    top : calc(100vh * 1332/900);
+    top : calc(100vh * 1460/900);
     width: calc(100vw * 290/1440);
-
+    animation: maze-rotate 100s linear 0s infinite normal;
 }
 
 
@@ -459,13 +514,13 @@
 .section-three-text-one {
     position: absolute;
     width: 372px;
-    width: calc(100vw * 372/1440);
+    width: calc(100vw * 500/1440);
 
     height: 28px;
     height: calc(100vh * 28/900);
 
     left: 693px;
-    left: calc(100vw * 543/1440);
+    left: calc(100vw * 475/1440);
 
     top: 1777px;
     top: calc(100vh * 1777/900);
@@ -473,7 +528,7 @@
 
     
 
-    text-align: right;
+    text-align: center;
 
     color: #2D291F;
     /* padding-left: max(17vw, 2rem);
@@ -486,7 +541,7 @@
     width: calc(100vw * 710/1440);
 
     height: 83px;
-    height: calc(100vh * 83/900);
+    height: calc(100vh * 88/900);
 
     left: 365px;
     left: calc(100vw * 365/1440);
@@ -560,13 +615,13 @@
 
 .maze-two {
     position: absolute;
-    left: calc(100vw * 0/1440);
+    left: calc(100vw * -425/1440);
     /* top: 1700px; */
-    top: calc(100vh * 1770/900);
+    top: calc(100vh * 1850/900);
     /* width: calc(100vw * 847.73/1440); */
-    height: calc(100vh * 1120/900); 
+    height: calc(100vh * 847.73/900); 
     z-index: 1;
-
+    animation: maze-rotate 200s linear 0s infinite normal;
 
     /* transform: rotate(-144.55deg); */
 }
@@ -582,7 +637,8 @@
 .question-div{
     position: absolute;
     width: calc(100vw * 286/1440);
-    height: calc(100vh * 403/900);
+    /* height: calc(100vh * 403/900); */
+    aspect-ratio: 286/403;
     background: #B1B1B1;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 27px;
@@ -962,7 +1018,7 @@
     width: calc(100vw * 225/1440);
 
     height: 31.22px;
-    height: calc(100vh * 31.22/900);
+    height: calc(100vh * 35.22/900);
 
     left: 23px;
     left: calc(100vw * 23/1440);
@@ -1276,7 +1332,7 @@
     line-height: calc(100vh * 30/900);
     text-align: center;
     text-decoration-line: underline;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     overflow: hidden;
 }
 
@@ -1284,9 +1340,16 @@
     overflow: hidden;
 }
 
+.section-five-links a {
+    color: #FFFFFF !important;
+    font-family: 'Marcellus';
+    font-style: normal;
+    font-weight: 300;
+}
+
 
 .section-five-links a:visited {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 
 
@@ -1347,6 +1410,66 @@
 
 }
 
+.email-heading-mobile {
+    display: none;
+}
+
+
+.clipboard{
+    position: absolute;
+    width: 57px;
+    width: calc(100vw * 57/1440);
+
+    height: 57px;
+    height: calc(100vh * 57/900);
+
+    left: 851px;
+    left: calc(100vw * 851/1440);
+
+    top: 4242px;
+    top: calc(100vh * 4242/900);
+    cursor: pointer;
+    opacity: 0;
+}
+
+.logo-heading{
+    position: absolute;
+    font-family: 'Marcellus';
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(100vw * 16/1440);
+    line-height: calc(100vh * 20/900);
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.instagram-heading{
+    width: calc(100vw * 160/1440);
+    height: calc(100vh * 23/900);
+    left: calc(100vw * 481/1440);
+    top: calc(100vh * 4305/900);
+}
+
+.discord-heading{
+    width: calc(100vw * 312/1440);
+    height: calc(100vh * 23/900);
+    left: calc(100vw * 560/1440);
+    top: calc(100vh * 4305/900);
+}
+
+.email-heading{
+    width: calc(100vw * 312/1440);
+    height: calc(100vh * 23/900);
+    left: calc(100vw * 722/1440);
+    top: calc(100vh * 4305/900);
+}
+  
+
+
+  
+
+
+
 /* ########################################## MOBILE ############################################# */
 
 @media (max-width: 480px) {
@@ -1362,6 +1485,10 @@
         overflow-x: hidden;
     }
 
+    .pages{
+        overflow-x: hidden;
+    }
+
 /* ########################################## SECTION ONE (MOBILE)  ########################################## */
 
 
@@ -1371,6 +1498,20 @@
         height: 775px;
         height: calc(100vh * 775/900);
 
+    }
+
+    .section-one-heading {
+        position: absolute;
+        width: calc(100vw * 168/415);
+        height: calc(100vh * 32/900);
+        left: calc(100vw * 123/415);
+        top: calc(100vh * 402/900);
+        font-family: 'Marcellus';
+        font-style: normal;
+        font-weight: 400;
+        font-size: calc(100vw * 20/415);
+        line-height: calc(100vh * 25/900);
+       
     }
 
     .btn-about {
@@ -1439,12 +1580,13 @@
         top: calc(100vh * 42.2/900);
     }
 
-    /* .elan-logo {
+    .elan-logo {
         position: absolute;
-        width: calc(100vw * 78/415);
-        height: calc(100vh * 62/900);
+        width: calc(100vw * 90/415);
+        height: calc(100vh * 90/900);
         left: calc(100vw * 340/415);
-    } */
+        top: calc(100vh * -10/900);
+    }
 
     .cryptex-logo{
         position: absolute;
@@ -1482,6 +1624,8 @@
         height: calc(100vh * 316/900);
     }
 
+    
+
     .section-two-text-one{
         position: absolute;
         width: calc(100vw * 380/415);
@@ -1500,6 +1644,8 @@
 
         text-align: center;
     }
+
+    
 
 /* ########################################## SECTION THREE (MOBILE)  ########################################## */
 
@@ -1944,6 +2090,48 @@
         top: calc(100vh * 2637.5/900);
         z-index: 500;
     }
+
+    .clipboard{
+        width: calc(100vw * 22/415);
+        height: calc(100vh * 18/900);
+        left: calc(100vw * 319/415);
+        top: calc(100vh * 2637.5/900);
+        opacity: 0;
+    }
+    
+    .logo-heading{
+        position: absolute;
+        font-family: 'Marcellus';
+        font-style: normal;
+        font-weight: 400;
+        font-size: calc(100vw * 10/415);
+        line-height: calc(100vh * 13/900);
+        text-align: center;
+        color: #FFFFFF;
+    }
+    
+    .instagram-heading{
+        width: calc(100vw * 61/415);
+        height: calc(100vh * 13/900);
+        left: calc(100vw * 56/415);
+        top: calc(100vh * 2659/900);
+    }
+    
+    .discord-heading{
+        width: calc(100vw * 66/415);
+        height: calc(100vh * 13/900);
+        left: calc(100vw * 173/415);
+        top: calc(100vh * 2659/900);
+    }
+    
+    .email-heading{
+        width: calc(100vw * 91/415);
+        height: calc(100vh * 13/900);
+        left: calc(100vw * 284/415);
+        top: calc(100vh * 2659/900);
+    }
+
+  
 
     .section-five-heading{
         display: none;
