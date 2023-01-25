@@ -44,33 +44,18 @@ animateCircles();
 
 
 
-function myFunction() {
-  let copyText = clipboard.getAttribute("value");
-  navigator.clipboard.writeText(copyText);
-  document.getElementById("email-heading").innerHTML = "Email Copied!";
-  setTimeout(() => {
-    document.getElementById("email-heading").innerHTML = "Email";
-  }, "2000")
+// function myFunction() {
+//   let copyText = clipboard.getAttribute("value");
+//   navigator.clipboard.writeText(copyText);
+//   document.getElementById("email-heading").innerHTML = "Email Copied!";
+//   setTimeout(() => {
+//     document.getElementById("email-heading").innerHTML = "Email";
+//   }, "2000")
 
-}
+// }
 
 
-// const observer = new IntersectionObserver(entries => {
-//   // Loop over the entries
-//   entries.forEach(entry => {
-//     // If the element is visible
-//     if (entry.isIntersecting) {
-//       // Add the animation class
-//       entry.target.classList.add('fade-in-animation');
-//     }
-//   });
-// });
 
-// observer.observe(document.querySelector('.section-two-text-one-wrapper'));
-// observer.observe(document.querySelector('.section-three-heading-wrapper'));
-// observer.observe(document.querySelector('.section-three-text-one-wrapper'));
-// observer.observe(document.querySelector('.section-three-text-two-wrapper'));
-// observer.observe(document.querySelector('.section-three-text-three-wrapper'));
 
 
 const faders = document.querySelectorAll(".fade-in");
